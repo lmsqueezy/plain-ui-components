@@ -2,9 +2,9 @@
 
 namespace LemonSqueezy\PlainUiComponents\Components;
 
-use LogicException;
 use LemonSqueezy\PlainUiComponents\Contracts\Component;
 use LemonSqueezy\PlainUiComponents\Contracts\ContainerComponent;
+use LogicException;
 
 class Container implements Component
 {
