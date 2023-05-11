@@ -2,7 +2,6 @@
 
 namespace LemonSqueezy\PlainUiComponents\Tests\Components;
 
-use LogicException;
 use LemonSqueezy\PlainUiComponents\Components\Badge;
 use LemonSqueezy\PlainUiComponents\Components\CopyButton;
 use LemonSqueezy\PlainUiComponents\Components\Divider;
@@ -12,6 +11,7 @@ use LemonSqueezy\PlainUiComponents\Components\Row;
 use LemonSqueezy\PlainUiComponents\Components\Spacer;
 use LemonSqueezy\PlainUiComponents\Components\Text;
 use LemonSqueezy\PlainUiComponents\Tests\TestCase;
+use LogicException;
 
 class RowComponentTest extends TestCase
 {
