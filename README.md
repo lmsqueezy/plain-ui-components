@@ -12,7 +12,7 @@ A Laravel-based library to easily build [Plain UI component](https://docs.plain.
 ## Requirements
 
 - PHP 8.1 or higher
-- Laravel 10.0 or higher
+- Laravel 9.33 or higher
 
 ## Installation
 
