@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Support Laravel 9.33 and higher ([#2](https://github.com/lmsqueezy/plain-ui-components/pull/2))
+
 ### Fixed
 
 - Fix Readme.md badges ([#1](https://github.com/lmsqueezy/plain-ui-components/pull/1))
