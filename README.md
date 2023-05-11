@@ -2,9 +2,9 @@
 
 <p>
     <a href="https://github.com/lmsqueezy/plain-ui-components/actions"><img src="https://github.com/lmsqueezy/plain-ui-components/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
-    <a href="https://packagist.org/packages/lmsqueezy/plain-ui-components"><img src="https://img.shields.io/packagist/dt/lmsqueezy/plain-ui-components" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/lmsqueezy/plain-ui-components"><img src="https://img.shields.io/packagist/v/lmsqueezy/plain-ui-components" alt="Latest Stable Version"></a>
-    <a href="https://packagist.org/packages/lmsqueezy/plain-ui-components"><img src="https://img.shields.io/packagist/l/lmsqueezy/plain-ui-components" alt="License"></a>
+    <a href="https://packagist.org/packages/lemonsqueezy/plain-ui-components"><img src="https://img.shields.io/packagist/dt/lemonsqueezy/plain-ui-components" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/lemonsqueezy/plain-ui-components"><img src="https://img.shields.io/packagist/v/lemonsqueezy/plain-ui-components" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/lemonsqueezy/plain-ui-components"><img src="https://img.shields.io/packagist/l/lemonsqueezy/plain-ui-components" alt="License"></a>
 </p>
 
 A Laravel-based library to easily build [Plain UI component](https://docs.plain.com/adding-context/ui-components) cards.
