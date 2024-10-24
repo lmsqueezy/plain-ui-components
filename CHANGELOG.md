@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [v0.1.1](https://github.com/lmsqueezy/plain-ui-components/compare/v0.1.0...v0.1.1) - 2024-10-24
+
+### Added
+- Laravel 11 Support ([#4](https://github.com/lmsqueezy/plain-ui-components/pull/4))
+- PHP 8.3 Support ([#6](https://github.com/lmsqueezy/plain-ui-components/pull/6))
+
 ## [v0.1.0](https://github.com/lmsqueezy/plain-ui-components/releases/tag/v0.1.0) - 2023-05-11
 
 ### Added
