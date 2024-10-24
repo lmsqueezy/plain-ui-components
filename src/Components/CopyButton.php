@@ -20,7 +20,7 @@ class CopyButton implements ContainerComponent, RowComponent
     /**
      * Create a new copy button component instance.
      */
-    protected function __construct(string $value, string $tooltip = null)
+    protected function __construct(string $value, ?string $tooltip = null)
     {
         $this->value = $value;
         $this->tooltip = $tooltip;
@@ -29,7 +29,7 @@ class CopyButton implements ContainerComponent, RowComponent
     /**
      * Fluently create a new copy button component instance.
      */
-    public static function make(string $value, string $tooltip = null): static
+    public static function make(string $value, ?string $tooltip = null): static
     {
         return new static($value, $tooltip);
     }

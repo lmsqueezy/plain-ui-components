@@ -21,7 +21,7 @@ class Row implements ContainerComponent
     /**
      * Create a new row component instance.
      */
-    public function __construct(RowComponent $main = null, RowComponent $aside = null)
+    public function __construct(?RowComponent $main = null, ?RowComponent $aside = null)
     {
         if ($main) {
             $this->addMain($main);
@@ -35,7 +35,7 @@ class Row implements ContainerComponent
     /**
      * Fluently create a new row component instance.
      */
-    public static function make(RowComponent $main = null, RowComponent $aside = null): static
+    public static function make(?RowComponent $main = null, ?RowComponent $aside = null): static
     {
         return new static($main, $aside);
     }
