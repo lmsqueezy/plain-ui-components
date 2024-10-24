@@ -24,7 +24,7 @@ class Card
     /**
      * Create a new card instance.
      */
-    protected function __construct(string $key, int $ttl = null)
+    protected function __construct(string $key, ?int $ttl = null)
     {
         $this->key = $key;
         $this->ttl = $ttl;
@@ -33,7 +33,7 @@ class Card
     /**
      * Fluently create a new card instance.
      */
-    public static function make(string $key, int $ttl = null): static
+    public static function make(string $key, ?int $ttl = null): static
     {
         return new static($key, $ttl);
     }

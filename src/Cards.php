@@ -33,7 +33,7 @@ class Cards implements Stringable
      */
     public static function make(): static
     {
-        return new static();
+        return new static;
     }
 
     /**
@@ -66,7 +66,7 @@ class Cards implements Stringable
     /**
      * Resolve the requested cardKeys into an array.
      */
-    public function toArray(Request $request = null): array
+    public function toArray(?Request $request = null): array
     {
         $keys = $request?->json('cardKeys');
 
