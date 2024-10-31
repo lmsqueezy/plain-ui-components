@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [v0.2.0](https://github.com/lmsqueezy/plain-ui-components/compare/v0.1.1...v0.2.0) - 2024-10-31
+
 ### Added
 - Add Conditionable trait to Card ([#7](https://github.com/lmsqueezy/plain-ui-components/pull/7))
 
