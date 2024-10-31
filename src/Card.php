@@ -2,10 +2,13 @@
 
 namespace LemonSqueezy\PlainUiComponents;
 
+use Illuminate\Support\Traits\Conditionable;
 use LemonSqueezy\PlainUiComponents\Contracts\Component;
 
 class Card
 {
+    use Conditionable;
+
     /**
      * The key of the card.
      */

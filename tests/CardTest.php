@@ -263,4 +263,37 @@ class CardTest extends TestCase
             )->toArray()
         );
     }
+
+    /** @test */
+    public function the_card_can_conditionally_add_components(): void
+    {
+        $this->assertSame(
+            [
+                'key' => 'card-key',
+                'timeToLiveSeconds' => null,
+                'components' => [
+                    [
+                        'componentText' => [
+                            'text' => 'Hello world',
+                        ],
+                    ],
+                ],
+            ],
+            Card::make('card-key')
+                ->when(true, fn (Card $card) => $card->add(Text::make('Hello world')))
+                ->toArray()
+        );
+
+        $this->assertSame(
+            [
+                'key' => 'card-key',
+                'timeToLiveSeconds' => null,
+                'components' => [
+                ],
+            ],
+            Card::make('card-key')
+                ->when(false, fn (Card $card) => $card->add(Text::make('Hello world')))
+                ->toArray()
+        );
+    }
 }
