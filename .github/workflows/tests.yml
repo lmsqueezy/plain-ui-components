@@ -16,7 +16,6 @@ jobs:
       matrix:
         php: [ 8.1, 8.2, 8.3, 8.4 ]
         laravel: [ 8, 9, 10, 11 ]
-        stability: [ 'prefer-lowest', 'prefer-stable' ]
         exclude:
           - php: 8.1
             laravel: 11
@@ -36,7 +35,7 @@ jobs:
           - laravel: 11
             testbench: 9
 
-    name:  PHP ${{ matrix.php }} L${{ matrix.laravel }} w/ ${{ matrix.stability }}
+    name:  PHP ${{ matrix.php }} L${{ matrix.laravel }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -57,7 +56,7 @@ jobs:
           max_attempts: 5
           command: |
             composer require "laravel/framework:^${{ matrix.laravel }}" "orchestra/testbench:^${{ matrix.testbench }}" --no-interaction --no-update
-            composer update --prefer-dist --no-interaction --no-progress --${{ matrix.stability }}
+            composer update --prefer-dist --no-interaction --no-progress --prefer-stable
 
       - name: Execute tests
         run: vendor/bin/phpunit
