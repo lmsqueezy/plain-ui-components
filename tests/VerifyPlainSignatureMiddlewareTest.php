@@ -23,7 +23,7 @@ class VerifyPlainSignatureMiddlewareTest extends TestCase
         $this->assertFalse($called);
         $response->assertStatus(400);
     }
-    
+
     /** @test */
     public function it_blocks_the_request_when_the_middleware_is_applied_without_a_secret_being_configured(): void
     {
@@ -37,11 +37,11 @@ class VerifyPlainSignatureMiddlewareTest extends TestCase
         $response = $this->post('/', ['example' => 'content'], [
             'plain-request-signature' => 'example-signature',
         ]);
-        
+
         $this->assertFalse($called);
         $response->assertStatus(403);
     }
-    
+
     /** @test */
     public function it_blocks_the_request_when_the_plain_signature_header_does_not_match_the_configured_secret(): void
     {
@@ -59,7 +59,7 @@ class VerifyPlainSignatureMiddlewareTest extends TestCase
         $this->assertFalse($called);
         $response->assertStatus(403);
     }
-    
+
     /** @test */
     public function it_allows_the_request_when_the_plain_signature_header_matches_the_configured_secret(): void
     {
