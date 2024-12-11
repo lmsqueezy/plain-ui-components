@@ -18,19 +18,19 @@ jobs:
         laravel: [ 8, 9, 10, 11 ]
         stability: [ 'prefer-lowest', 'prefer-stable' ]
         include:
-          - laravel: 8.*
+          - laravel: 8
             testbench: ^8.20
-          - laravel: 9.*
+          - laravel: 9
             testbench: ^8.20
-          - laravel: 10.*
+          - laravel: 10
             testbench: ^8.20
-          - laravel: 11.*
+          - laravel: 11
             testbench: ^9.0
         exclude:
           - php: 8.1
-            laravel: 11.*
+            laravel: 11
           - php: 8.4
-            laravel: 8.*
+            laravel: 8
               
     name:  PHP ${{ matrix.php }} L${{ matrix.laravel }} w/ ${{ matrix.stability }}
     steps:
