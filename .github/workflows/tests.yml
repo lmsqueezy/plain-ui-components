@@ -29,9 +29,7 @@ jobs:
         exclude:
           - php: 8.1
             laravel: 11
-          - php: 8.4
-            laravel: 8
-              
+
     name:  PHP ${{ matrix.php }} L${{ matrix.laravel }} w/ ${{ matrix.stability }}
     steps:
       - name: Checkout code
