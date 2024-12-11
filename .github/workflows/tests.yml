@@ -15,26 +15,26 @@ jobs:
       fail-fast: true
       matrix:
         php: [ 8.1, 8.2, 8.3, 8.4 ]
-        laravel: [ 8, 9, 10, 11.3 ]
+        laravel: [ '8.83', '9.33', '10.0', '11.3' ]
         stability: [ 'prefer-lowest', 'prefer-stable' ]
         exclude:
           - php: 8.1
-            laravel: 11.3
+            laravel: '11.3'
           - php: 8.4
-            laravel: 8
+            laravel: '8.83'
           - php: 8.4
-            laravel: 9
+            laravel: '9.33'
           - php: 8.4
-            laravel: 10
+            laravel: '10.0'
         include:
-          - laravel: 8.*
-            testbench: 6
-          - laravel: 9.*
-            testbench: 7
-          - laravel: 10.*
-            testbench: 8.2
-          - laravel: 11.*
-            testbench: 9
+          - laravel: '8.83'
+            testbench: '6.0'
+          - laravel: '9.33'
+            testbench: '7.0'
+          - laravel: '10.0'
+            testbench: '8.2'
+          - laravel: '11.3'
+            testbench: '9.0'
 
     name:  PHP ${{ matrix.php }} L${{ matrix.laravel }} w/ ${{ matrix.stability }}
     steps:
