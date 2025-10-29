@@ -4,11 +4,14 @@ namespace LemonSqueezy\PlainUiComponents;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Traits\Conditionable;
 use InvalidArgumentException;
 use Stringable;
 
 class Cards implements Stringable
 {
+    use Conditionable;
+    
     /**
      * The resolved cards that should be used.
      */

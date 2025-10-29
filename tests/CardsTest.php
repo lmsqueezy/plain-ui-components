@@ -80,4 +80,42 @@ class CardsTest extends TestCase
             (string) Cards::make()->add(Card::make('card-key'))
         );
     }
+
+    /** @test */
+    public function the_cards_are_conditionable(): void
+    {
+        $cards = Cards::make()
+            ->add(Card::make('included-1'))
+            ->when(false, function (Cards $cards) {
+                $cards->add(Card::make('when-not-included'));
+            })
+            ->unless(true, function (Cards $cards) {
+                $cards->add(Card::make('unless-not-include'));
+            })
+            ->add(Card::make('included-2'))
+            ->when(true, function (Cards $cards) {
+                $cards->add(Card::make('when-included'));
+            })
+            ->unless(false, function (Cards $cards) {
+                $cards->add(Card::make('unless-included'));
+            })
+            ->add(Card::make('included-3'));
+        
+        $expected = [
+            'included-1',
+            'included-2',
+            'included-3',
+            'unless-included',
+            'when-included',
+        ];
+        
+        $actual = collect($cards->toArray())
+            ->pluck('*.key')
+            ->flatten()
+            ->sort()
+            ->values()
+            ->toArray();
+        
+        $this->assertEquals($expected, $actual);
+    }
 }
