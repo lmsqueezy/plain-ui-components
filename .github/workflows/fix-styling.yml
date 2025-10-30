@@ -3,28 +3,40 @@ name: Check & fix styling
 on:
   push:
     branches:
-      - master
-      - '*.x'
-  pull_request:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  pint:
-    runs-on: ubuntu-22.04
+  fix-styling:
+    name: Check & fix styling
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          php-version: '8.3'
-          tools: pint
+          persist-credentials: true
 
-      - name: Run Laravel Pint
-        run: pint --preset laravel
-
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          commit_message: Fix styling
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run styling fix
+        run: npm run format
+
+      - name: Create Pull Request with styling fixes
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: fix/auto-styling
+          commit-message: chore: auto-fix styling
+          title: chore: auto-fix styling
+          body: Automated styling fixes from CI
