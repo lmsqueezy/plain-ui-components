@@ -100,7 +100,7 @@ class CardsTest extends TestCase
                 $cards->add(Card::make('unless-included'));
             })
             ->add(Card::make('included-3'));
-        
+
         $expected = [
             'included-1',
             'included-2',
@@ -108,14 +108,14 @@ class CardsTest extends TestCase
             'unless-included',
             'when-included',
         ];
-        
+
         $actual = collect($cards->toArray())
             ->pluck('*.key')
             ->flatten()
             ->sort()
             ->values()
             ->toArray();
-        
+
         $this->assertEquals($expected, $actual);
     }
 }
