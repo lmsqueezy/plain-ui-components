@@ -11,7 +11,7 @@ use Stringable;
 class Cards implements Stringable
 {
     use Conditionable;
-    
+
     /**
      * The resolved cards that should be used.
      */
